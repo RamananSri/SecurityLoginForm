@@ -15,6 +15,7 @@ express.post("/", parser, (req, res) => {
 	if (req.body.uname == user.username && req.body.psw == user.password) {
 		res.sendfile("./pages/loginSuccess.html", { root: __dirname });
 	}
+	res.sendFile("./pages/basicLoginForm.html", { root: __dirname });
 });
 
 express.get("/2", (req, res) => {
