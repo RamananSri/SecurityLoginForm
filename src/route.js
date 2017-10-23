@@ -18,7 +18,7 @@ express.post("/", parser, (req, res) => {
 });
 
 express.get("/2", (req, res) => {
-	res.sendFile("./pages/basicLoginForm.html", { root: __dirname });
+	res.sendFile("./pages/basicLoginCaptcha.html", { root: __dirname });
 });
 
 module.exports = express;
