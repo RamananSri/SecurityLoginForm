@@ -1,5 +1,5 @@
 const express = require("express");
-const route = require("./src/pages/basicLoginForm");
+const route = require("./src/route");
 const app = express();
 
 app.use("/login", route);
