@@ -23,8 +23,11 @@ express.get("/2", (req, res) => {
 });
 
 express.post("/2", parser, (req, res) => {
-	if (req.body.uname == user.username && req.body.psw == user.password && req.body['g-recaptcha-response'] !== "" || req.body['g-recaptcha-response'] !== null || req.body['g-recaptcha-response'] !== undefined) {
-		res.sendFile("./pages/loginSuccess.html", { root: __dirname });
+	if (req.body.uname == user.username && req.body.psw == user.password) {
+		if (req.body['g-recaptcha-response'] !== "" || req.body['g-recaptcha-response'] !== null || req.body['g-recaptcha-response'] !== undefined) {
+			res.sendFile("./pages/loginSuccess.html", { root: __dirname });
+		}
+
 	} if
 		(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === "" || req.body['g-recaptcha-response'] === null) {
 		return res.json({ "responseCode": 1, "responseDesc": "Please select captcha" });
